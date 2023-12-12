@@ -1,7 +1,7 @@
 interface CommonNotificationProps {
   username: string;
   userAvatar: string;
-  timestamp: Date;
+  timestamp: string;
 }
 
 type actionTypes =
@@ -34,8 +34,8 @@ interface PrivateMessageNotificationProps extends CommonNotificationProps {
 }
 
 type NotificationItemProps =
-  | { variant: "normal"; content: NormalNotificationProps }
-  | { variant: "withImages"; content: WithImagesNotificationProps }
-  | { variant: "privateMessage"; content: PrivateMessageNotificationProps };
+  | { variant: "normal"; content: NormalNotificationProps, hasRead: boolean, onClick: () => void; }
+  | { variant: "withImages"; content: WithImagesNotificationProps, hasRead: boolean, onClick: () => void; }
+  | { variant: "privateMessage"; content: PrivateMessageNotificationProps, hasRead: boolean, onClick: () => void; };
 
 export { CommonNotificationProps, actionTypes, NormalNotificationProps, WithImagesNotificationProps, PrivateMessageNotificationProps, NotificationItemProps }

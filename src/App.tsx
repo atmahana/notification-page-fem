@@ -1,10 +1,10 @@
-import NotificationItem from "./components/Notifications/NotificationItem";
-import AvatarMark from "../src/assets/avatar-mark-webber.webp";
-import AvatarAngela from "../src/assets/avatar-angela-gray.webp";
-import AvatarJacob from "../src/assets/avatar-jacob-thompson.webp";
-import NotifImage from '../src/assets/image-chess.webp';
+import NotificationList from "./components/Notifications/NotificationList";
 
 function App() {
+  // TODO: CREATE HANDLE READ ALL NOTIFICATION FUNCTION
+  const handleReadAllNotifications = () => {
+  };
+
   return (
     <main className="px-4 py-[1.35rem]">
       <header className="flex justify-between">
@@ -14,63 +14,10 @@ function App() {
             3
           </span>
         </div>
-        <button className="text-muted-dark">Mark all as read</button>
+        <button className="text-muted-dark" onClick={handleReadAllNotifications}>Mark all as read</button>
       </header>
-      <section className="pt-6 grid gap-3">
-        <NotificationItem
-          variant="normal"
-          content={{
-            actionType: {
-              type: "reaction",
-              postTitle: "My first tournament today",
-            },
-            username: "Mark Webber",
-            userAvatar: `${AvatarMark}`,
-            timestamp: new Date(),
-          }}
-        />
-        <NotificationItem
-          variant="normal"
-          content={{
-            username: "Angela Gray",
-            userAvatar: `${AvatarAngela}`,
-            actionType: {
-              type: "follow",
-            },
-            timestamp: new Date(),
-          }}
-        />
-        <NotificationItem
-          variant="normal"
-          content={{
-            username: "Jacob Thompson",
-            userAvatar: `${AvatarJacob}`,
-            actionType: {
-              type: "joinedGroup",
-              groupName: "Chess Club",
-            },
-            timestamp: new Date(),
-          }}
-        />
-        <NotificationItem
-          variant="privateMessage"
-          content={{
-            username: "Rizky Hasanuddin",
-            userAvatar: `${AvatarJacob}`,
-            timestamp: new Date(),
-            message:
-              "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
-          }}
-        />
-        <NotificationItem
-          variant="withImages"
-          content={{
-            username: "Kimberly Smith",
-            userAvatar: `${AvatarJacob}`,
-            timestamp: new Date(),
-            imageUrl: NotifImage
-          }}
-        />
+      <section className="pt-6">
+        <NotificationList />
       </section>
     </main>
   );

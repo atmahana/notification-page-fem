@@ -20,7 +20,7 @@ const PrivateMessageContent: FC<PrivateMessageContentProps> = ({
           sent you a private message
         </p>
         <p className="text-muted-light text-sm">
-          {timestamp.toDateString()}
+          {timestamp}
         </p>
         <div className="text-sm text-muted-dark border rounded-sm px-3 py-4 mt-4">
           <p className="max-w-[22ch] leading-tight">

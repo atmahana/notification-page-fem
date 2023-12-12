@@ -41,7 +41,7 @@ const NormalContent: FC<NormalContentProps> = ({
             </>
           )}
         </p>
-        <p className="text-muted-light text-sm">{timestamp.toDateString()}</p>
+        <p className="text-muted-light text-sm">{timestamp}</p>
       </div>
     </>
   );

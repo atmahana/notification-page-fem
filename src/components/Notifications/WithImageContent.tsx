@@ -28,7 +28,7 @@ const WithmagesContent: FC<WithImageContentProps> = ({
             className="aspect-square w-10"
           />
         </div>
-        <p className="text-muted-light text-sm">{timestamp.toDateString()}</p>
+        <p className="text-muted-light text-sm">{timestamp}</p>
       </div>
     </>
   );

@@ -9,7 +9,12 @@ import NormalContent from "./NormalContent";
 import WithmagesContent from "./WithImageContent";
 import PrivateMessageContent from "./PrivateMessageContent";
 
-const NotificationItem: FC<NotificationItemProps> = ({ variant, content }) => {
+const NotificationItem: FC<NotificationItemProps> = ({
+  variant,
+  content,
+  hasRead,
+  onClick,
+}) => {
   let renderedContent: ReactNode;
 
   switch (variant) {
@@ -51,9 +56,19 @@ const NotificationItem: FC<NotificationItemProps> = ({ variant, content }) => {
   }
 
   return (
-    <div className="bg-background rounded-lg p-3.5 grid grid-flow-col grid-cols-6 gap-3.5 outline outline-1">
-      {renderedContent}
-    </div>
+    <li className="list-none" onClick={onClick}>
+      <a
+        onClick={(e) => {
+          e.preventDefault();
+        }}
+        href="/"
+        className={`${
+          hasRead ? "bg-white" : "bg-background outline"
+        } rounded-lg p-3.5 grid grid-flow-col grid-cols-6 gap-3.5`}
+      >
+        {renderedContent}
+      </a>
+    </li>
   );
 };
 
