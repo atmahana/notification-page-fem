@@ -1,6 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import NotificationItem from "./NotificationItem";
 import data from "../../data.json";
+import {
+  CREATE_NOTIFICATIONS,
+  READ_ONE_NOTIFICATION,
+  useNotification,
+} from "../../hooks/NotificationContext";
 
 interface NotificationListProps {}
 
@@ -8,30 +13,26 @@ let count = 0;
 
 const NotificationList: FC<NotificationListProps> = () => {
   count++;
-  const [notificationsList, setNotificationsList] = useState<
-    Record<string, unknown>[]
-  >(data.notifications);
+  // const [notificationsList, setNotificationsList] = useState<
+  //   Record<string, unknown>[]
+  // >(data.notifications);
+
+  const { state, dispatch } = useNotification();
+
+  const notificationsList = state.notifications;
+
+  useEffect(() => {
+    dispatch({
+      type: CREATE_NOTIFICATIONS,
+      payload: data.notifications,
+    });
+  }, []);
 
   const markNotificationAsRead = (id: number) => {
-    // Find the index of the notification with the given ID
-    const notificationIndex = notificationsList.findIndex(
-      (notification) => notification.id === id
-    );
-
-    if (notificationIndex !== -1) {
-      // Create a copy of the notificationsList array
-      const updatedNotificationsList = [...notificationsList];
-
-      // Update the hasRead property for the specific notification
-      if (updatedNotificationsList[notificationIndex].hasRead !== true) {
-        updatedNotificationsList[notificationIndex] = {
-          ...updatedNotificationsList[notificationIndex],
-          hasRead: true,
-        };
-
-        setNotificationsList(updatedNotificationsList);
-      }
-    }
+    dispatch({
+      type: READ_ONE_NOTIFICATION,
+      payload: id,
+    });
   };
 
   return (
