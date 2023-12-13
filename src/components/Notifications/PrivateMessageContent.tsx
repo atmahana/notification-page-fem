@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { PrivateMessageNotificationProps as PrivateMessageContentProps } from "./notification";
+import { PrivateMessageNotificationProps as PrivateMessageContentProps } from "../../types/notification";
 
 const PrivateMessageContent: FC<PrivateMessageContentProps> = ({
   username,

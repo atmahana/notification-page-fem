@@ -4,7 +4,7 @@ import {
   WithImagesNotificationProps,
   PrivateMessageNotificationProps,
   NotificationItemProps,
-} from "./notification";
+} from "../../types/notification";
 import NormalContent from "./NormalContent";
 import WithmagesContent from "./WithImageContent";
 import PrivateMessageContent from "./PrivateMessageContent";

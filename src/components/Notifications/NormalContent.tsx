@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NormalNotificationProps as NormalContentProps } from "./notification";
+import { NormalNotificationProps as NormalContentProps } from "../../types/notification";
 
 const NormalContent: FC<NormalContentProps> = ({
   username,

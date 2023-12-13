@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { WithImagesNotificationProps as WithImageContentProps } from "./notification";
+import { WithImagesNotificationProps as WithImageContentProps } from "../../types/notification";
 
 const WithmagesContent: FC<WithImageContentProps> = ({
   username,
