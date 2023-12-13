@@ -1,9 +1,22 @@
 import NotificationList from "./components/Notifications/NotificationList";
+import ReadAllButton from "./components/ReadAllButton";
+import {
+  useNotification,
+} from "./hooks/NotificationContext";
 
 function App() {
-  // TODO: CREATE HANDLE READ ALL NOTIFICATION FUNCTION
-  const handleReadAllNotifications = () => {
-  };
+  const { state } = useNotification();
+  // Why using state producing infinite rerender???????
+  // const [activeNotificationCount, setActiveNotificationCount] = useState(0);
+
+  let activeNotificationCount = 0;
+
+  state.notifications.forEach((notification) => {
+    if (notification.hasRead === false) {
+      // setActiveNotificationCount((value) => value + 1);
+      activeNotificationCount++
+    }
+  });
 
   return (
     <main className="px-4 py-[1.35rem]">
@@ -11,10 +24,10 @@ function App() {
         <div className="flex gap-2.5 items-center">
           <h1 className="font-bold text-xl">Notifications </h1>
           <span className="bg-primary text-white rounded-md px-2.5 font-bold">
-            3
+            {activeNotificationCount}
           </span>
         </div>
-        <button className="text-muted-dark" onClick={handleReadAllNotifications}>Mark all as read</button>
+        <ReadAllButton />
       </header>
       <section className="pt-6">
         <NotificationList />
