@@ -27,7 +27,7 @@ const NotificationList: FC = () => {
   };
 
   return (
-    <ul className="grid gap-3">
+    <ul className="grid gap-3 md:gap-2">
       {notificationsList.map((notification: any, index) => (
         <NotificationItem
           key={index}

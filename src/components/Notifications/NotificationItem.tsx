@@ -63,11 +63,12 @@ const NotificationItem: FC<NotificationItemProps> = ({
         }}
         href="/"
         className={`${
-          hasRead ? "bg-white" : "bg-background outline"
-        } rounded-lg p-3.5 grid grid-flow-col grid-cols-6 gap-3.5`}
+          hasRead ? "bg-white" : "bg-background"
+        } rounded-lg p-3.5 flex gap-3.5 md:p-[1.125rem] md:gap-5`}
       >
         {renderedContent}
       </a>
+      
     </li>
   );
 };

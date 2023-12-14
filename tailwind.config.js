@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        error: "hsl(1, 90%, 64%)",
+        accent: "hsl(1, 90%, 64%)",
         primary: "hsl(219, 85%, 26%)",
         background: "hsl(210, 60%, 98%)",
         foreground: "hsl(224, 21%, 14%)", 
