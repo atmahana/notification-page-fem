@@ -6,14 +6,11 @@ import {
 
 function App() {
   const { state } = useNotification();
-  // Why using state producing infinite rerender???????
-  // const [activeNotificationCount, setActiveNotificationCount] = useState(0);
 
   let activeNotificationCount = 0;
 
   state.notifications.forEach((notification) => {
     if (notification.hasRead === false) {
-      // setActiveNotificationCount((value) => value + 1);
       activeNotificationCount++
     }
   });

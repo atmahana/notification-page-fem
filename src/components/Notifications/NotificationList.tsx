@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import NotificationItem from "./NotificationItem";
 import data from "../../data.json";
 import {
@@ -7,16 +7,7 @@ import {
   useNotification,
 } from "../../hooks/NotificationContext";
 
-interface NotificationListProps {}
-
-let count = 0;
-
-const NotificationList: FC<NotificationListProps> = () => {
-  count++;
-  // const [notificationsList, setNotificationsList] = useState<
-  //   Record<string, unknown>[]
-  // >(data.notifications);
-
+const NotificationList: FC = () => {
   const { state, dispatch } = useNotification();
 
   const notificationsList = state.notifications;
@@ -37,7 +28,6 @@ const NotificationList: FC<NotificationListProps> = () => {
 
   return (
     <ul className="grid gap-3">
-      <li>{count}</li>
       {notificationsList.map((notification: any, index) => (
         <NotificationItem
           key={index}
