@@ -19,7 +19,7 @@
       "variant": "normal",
       "content": {
         "username": "Angela Gray",
-        "userAvatar": "/src/assets/avatar-mark-webber.webp",
+        "userAvatar": "/src/assets/avatar-angela-gray.webp",
         "timestamp": "2023-12-10T02:44:45+0000",
         "actionType": {
           "type": "follow"
@@ -32,7 +32,7 @@
       "variant": "normal",
       "content": {
         "username": "Jacob Thompson",
-        "userAvatar": "/src/assets/avatar-mark-webber.webp",
+        "userAvatar": "/src/assets/avatar-jacob-thompson.webp",
         "timestamp": "2023-12-09T11:44:45+0000",
         "actionType": {
           "type": "joinedGroup",
@@ -46,7 +46,7 @@
       "variant": "privateMessage",
       "content": {
         "username": "Rizky Hasanuddin",
-        "userAvatar": "/src/assets/avatar-mark-webber.webp",
+        "userAvatar": "/src/assets/avatar-rizky-hasanuddin.webp",
         "timestamp": "2023-12-05T13:44:45+0000",
         "message": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
       },
@@ -57,11 +57,39 @@
       "variant": "withImages",
       "content": {
         "username": "Kimberly Smith",
-        "userAvatar": "/src/assets/avatar-mark-webber.webp",
+        "userAvatar": "/src/assets/avatar-kimberly-smith.webp",
         "timestamp": "2023-12-02T17:28:45+0000",
         "imageUrl": "/src/assets/image-chess.webp"
       },
       "hasRead": true
+    },
+    {
+      "id": 5,
+      "variant": "normal",
+      "content": {
+        "username": " Nathan Peterson",
+        "userAvatar": "/src/assets/avatar-nathan-peterson.webp",
+        "timestamp": "2023-11-28T16:15:45+0000",
+        "actionType": {
+          "type": "reaction",
+          "postTitle": "5 end-game strategies to increase your win rate"
+        }
+      },
+      "hasRead": true
+    },
+    {
+      "id": 6,
+      "variant": "normal",
+      "content": {
+        "username": "Anna Kim",
+        "userAvatar": "/src/assets/avatar-anna-kim.webp",
+        "timestamp": "2023-11-28T12:30:45+0000",
+        "actionType": {
+          "type": "leftGroup",
+          "groupName": "Chess Club"
+        }
+      },
+      "hasRead": false
     }
   ]
 }
