@@ -15,7 +15,7 @@ const ReadAllButton: FC<ReadAllButtonProps> = () => {
     });
   };
   return (
-    <button className="text-muted-dark" onClick={handleReadAllNotifications}>
+    <button className="text-muted-dark hover:text-primary" onClick={handleReadAllNotifications}>
       Mark all as read
     </button>
   );

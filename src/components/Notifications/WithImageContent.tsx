@@ -16,7 +16,7 @@ const WithmagesContent: FC<WithImageContentProps> = ({
       <div className="w-full flex justify-between">
         <div>
           <p className="text-muted-light text-sm leading-snug max-w-[20ch] md:max-w-full md:text-base">
-            <strong className="text-foreground pr-1">{username}</strong>{" "}
+            <strong className="text-foreground pr-1 hover:text-primary">{username}</strong>{" "}
             commented on your picture
           </p>
           <p className="text-muted-light text-sm">{timestamp}</p>
@@ -25,7 +25,7 @@ const WithmagesContent: FC<WithImageContentProps> = ({
           <img
             src={imageUrl}
             alt="Notification's picture"
-            className="aspect-square w-10 md:w-12"
+            className="aspect-square w-10 md:w-12 hover:ring-2 rounded-md ring-light-gray-blue-2"
           />
         </div>
       </div>

@@ -15,11 +15,11 @@ const NormalContent: FC<NormalContentProps> = ({
       </div>
       <div>
         <p className="text-muted-light text-sm leading-snug md:text-base">
-          <strong className="text-foreground pr-1 md:pr-1.5">{username}</strong>
+          <strong className="text-foreground hover:text-primary pr-1 md:pr-1.5">{username}</strong>
           {actionType.type === "reaction" && (
             <>
               reacted to your recent post
-              <strong className="pl-1 text-muted-dark md:pl-2">
+              <strong className="pl-1 text-muted-dark hover:text-primary md:pl-2">
                 {actionType.postTitle}!
               </strong>{" "}
             </>
