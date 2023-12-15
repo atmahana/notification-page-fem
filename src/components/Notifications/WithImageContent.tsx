@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { WithImagesNotificationProps as WithImageContentProps } from "../../types/notification";
 import Avatar from "../Avatar";
+import { getRelativeTimestamp } from "../../lib/getRelativeTimestamp";
 
 const WithmagesContent: FC<WithImageContentProps> = ({
   username,
@@ -8,6 +9,8 @@ const WithmagesContent: FC<WithImageContentProps> = ({
   timestamp,
   imageUrl,
 }) => {
+  const timeDiff= getRelativeTimestamp(timestamp);
+  
   return (
     <>
       <div>
@@ -19,7 +22,7 @@ const WithmagesContent: FC<WithImageContentProps> = ({
             <strong className="text-foreground pr-1 hover:text-primary">{username}</strong>{" "}
             commented on your picture
           </p>
-          <p className="text-muted-light text-sm">{timestamp}</p>
+          <p className="text-muted-light text-sm">{timeDiff} ago</p>
         </div>
         <div>
           <img
